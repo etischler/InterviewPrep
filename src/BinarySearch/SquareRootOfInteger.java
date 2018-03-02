@@ -1,7 +1,9 @@
+package BinarySearch;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class BinarySearch_SquareRootOfInteger {
+public class SquareRootOfInteger {
     public static void main(String[] args) {
         System.out.println(solution(11));
         System.out.println(solution(4));
