@@ -20,7 +20,7 @@ public class Flip {
 
 
     }
-    
+
     static ArrayList<Integer> flip(String A) {
 
         int max = 0;
