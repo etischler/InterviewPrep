@@ -9,7 +9,7 @@ public class SpiralOrderMatrixII {
         System.out.println(generateMatrix(10));
         System.out.println(generateMatrix(0));
     }
-    
+
     static ArrayList<ArrayList<Integer>> generateMatrix(int A) {
         if(A == 0) {
             ArrayList<ArrayList<Integer>> ans = new ArrayList<>();
