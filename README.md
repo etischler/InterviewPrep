@@ -1,2 +1,2 @@
 # InterviewPrep
-InterviewPrep to showcase for potential recruiters / to increase skill
+SelfImprovement to showcase for potential recruiters / to increase skill
