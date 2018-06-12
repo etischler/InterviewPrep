@@ -11,30 +11,24 @@ public class ImplementPowerFunction {
     }
 
     static int pow(int x, int n, int d) {
-        long pow = power((long) x, (long) n);
+        long a = x;
+        long res = 1L;
 
-        while(pow < 0) {
-            pow += d;
+        while (n > 0) {
+
+            if (n % 2 == 1) {
+                res *= a;
+                res %= d;
+            }
+
+            a *= a;
+            a %= d;
+            n = n >> 1;
+
         }
 
-        return BigInteger.valueOf(pow).mod(BigInteger.valueOf((long)d)).intValue();
-    }
+        res = (res + d) % d;
 
-    static long power(long x, long y)
-    {
-        long temp;
-        if( y == 0)
-            return 1L;
-        temp = power(x, BigInteger.valueOf(y).divide(BigInteger.valueOf(2)).longValue());
-
-        if (y%2 == 0)
-            return temp*temp;
-        else
-        {
-            if(y > 0)
-                return x * temp * temp;
-            else
-                return BigInteger.valueOf(temp * temp).divide(BigInteger.valueOf(x)).longValue();
-        }
+        return (int) res;
     }
 }
