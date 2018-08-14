@@ -1,4 +1,4 @@
-package ThreePointer;
+package TwoPointer;
 
 import java.util.ArrayList;
 import java.util.Arrays;
