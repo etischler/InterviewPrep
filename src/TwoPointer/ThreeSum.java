@@ -12,35 +12,30 @@ public class ThreeSum {
         System.out.println(threeSumClosest(new ArrayList<>(Arrays.asList( 4, 7, -4, 2, 2, 2, 3, -5, -3, 9, -4, 9, -7, 7, -1, 9, 9, 4, 1, -4, -2, 3, -3, -5, 4, -7, 7, 9, -4, 4, -8)), -3));
         System.out.println(threeSumClosest(new ArrayList<>(Arrays.asList(5, -2, -1, -10, 10)), 5));
     }
-
+//taken from internet, couldn't solve
     static int threeSumClosest(ArrayList<Integer> A, int B) {
-        boolean found = false;
-        int n = A.size();
-        // sort array elements
+        int min = Integer.MAX_VALUE;
+        int result = 0;
         Collections.sort(A);
 
-        for (int i=0; i<n-1; i++)
-        {
-            int l = i + 1;
-            int r = n - 1;
-            int x = A.get(i);
-            while (l < r)
-            {
-                if (x + A.get(l) + A.get(r) == B)
-                {
-                    l++;
-                    r--;
-                    found = true;
-                    return x + A.get(l) + A.get(r);
+        for(int i = 0; i < A.size(); i++){
+            int j = i+1;
+            int k = A.size()-1;
+            while(j < k){
+                int sum = A.get(i) + A.get(j) + A.get(k);
+                int diff = Math.abs(sum - B);
+                if(diff == 0)
+                    return sum; // or b
+                if(diff < min){
+                    min = diff;
+                    result = sum;
                 }
-
-                else if (x + A.get(l) + A.get(r) < B)
-                    l++;
+                if(sum <= B)
+                    j++;
                 else
-                    r--;
+                    k--;
             }
         }
-
-        return 0;
+        return result;
     }
 }
